@@ -1,0 +1,7 @@
+(function(angular) {
+    'use strict';
+    angular.module('config', [])
+        .constant('config', {
+           api: 'http://crmpv.local/'
+        });
+})(window.angular);

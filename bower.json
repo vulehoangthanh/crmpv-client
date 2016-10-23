@@ -1,0 +1,25 @@
+{
+  "name": "crm-pv-client",
+  "description": "crm-pv-client",
+  "authors": [
+    "LEHOANGTHANHVU <tinsatthu4@yahoo.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "AdminLTE": "admin-lte#2.*",
+    "Ionicons": "ionicons#~2.0.1",
+    "font-awesome": "^4.5.0",
+    "angular": "1.5.*",
+    "chosen": "1.6.*",
+    "angular-ui-tinymce": "^0.0.16",
+    "angular-ui-router": "1.0.0-beta.2",
+    "ngstorage": "^0.3.11"
+  }
+}
