@@ -1,0 +1,80 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 ng-hide="$ctrl.item.id" class="modal-title">Thêm Mới HĐ</h4>
+    <h4 ng-show="$ctrl.item.id" class="modal-title">Chỉnh sửa HĐ <strong ng-bind="$ctrl.item.id"></strong></h4>
+</div>
+<div class="modal-body">
+    <div class="form-group">
+        <label for="">Ngày Bắt Đầu HĐ</label>
+        <!--<input type="text" class="form-control" ng-model="$ctrl.item.start_date"/>-->
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            <input type="text" vl-date class="form-control pull-right" ng-model="$ctrl.item.start_date">
+        </div>
+        <label for="">Ngày Kết Thúc HĐ</label>
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            <input type="text" vl-date class="form-control pull-right" ng-model="$ctrl.item.end_date">
+        </div>
+        <!--<input type="text" class="form-control" ng-model="$ctrl.item.end_date"/>-->
+        <label for="">Mô Tả HĐ</label>
+        <textarea class="form-control" ng-model="$ctrl.item.description"></textarea>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"><i class="fa fa-user"></i> <strong>Thông Tin Bên A</strong></h3>
+                </div>
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="">Người Đại Diện</label>
+                        <input type="text" class="form-control" ng-model="$ctrl.item.a_person_name"/>
+                        <label for="">Chức vụ</label>
+                        <input type="text" class="form-control" ng-model="$ctrl.item.a_person_position"/>
+                        <label for="">Tên Công Ty</label>
+                        <input type="text" class="form-control" ng-model="$ctrl.item.a_name"/>
+                        <label for="">Điện Thoại</label>
+                        <input type="text" class="form-control" ng-model="$ctrl.item.a_phone"/>
+                        <label for="">Fax</label>
+                        <input type="text" class="form-control" ng-model="$ctrl.item.a_fax"/>
+                        <label for="">Địa chỉ</label>
+                        <textarea class="form-control" ng-model="$ctrl.item.a_address"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"><i class="fa fa-user"></i> <strong>Thông Tin Bên B</strong></h3>
+                </div>
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="">Người Đại Diện</label>
+                        <input type="text" class="form-control" ng-model="$ctrl.item.b_person_name"/>
+                        <label for="">Chức vụ</label>
+                        <input type="text" class="form-control" ng-model="$ctrl.item.b_person_position"/>
+                        <label for="">Tên Công Ty</label>
+                        <input type="text" class="form-control" ng-model="$ctrl.item.b_name"/>
+                        <label for="">Điện Thoại</label>
+                        <input type="text" class="form-control" ng-model="$ctrl.item.b_phone"/>
+                        <label for="">Fax</label>
+                        <input type="text" class="form-control" ng-model="$ctrl.item.b_fax"/>
+                        <label for="">Địa chỉ</label>
+                        <textarea class="form-control" ng-model="$ctrl.item.b_address"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+    <button type="button" ng-click="$ctrl.submit()" ng-hide="$ctrl.item.id" class="btn btn-primary">Thêm Mới</button>
+    <button type="button" ng-click="$ctrl.submit()" ng-show="$ctrl.item.id" class="btn btn-primary">Cập Nhật</button>
+</div>

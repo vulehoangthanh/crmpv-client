@@ -1,0 +1,24 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 ng-hide="$ctrl.item.id" class="modal-title">Thêm Mới Cơ Hội</h4>
+    <h4 ng-show="$ctrl.item.id" class="modal-title">Chỉnh sửa Cơ hội <strong ng-bind="$ctrl.item.name"></strong></h4>
+</div>
+<div class="modal-body">
+    <div class="form-group">
+        <label for="">Nhân viên phụ trách</label>
+        <vl-users ng-model="$ctrl.item.assigned_user_id" title="Nhân viên phụ trách"/>
+    </div>
+    <div class="form-group">
+        <label for="">Tên cơ hội</label>
+        <input type="text" ng-model="$ctrl.item.name" class="form-control"/>
+        <label for="">Xác suất</label>
+        <input type="text" ng-model="$ctrl.item.probability" class="form-control"/>
+        <label for="">Mô tả</label>
+        <input type="text" ng-model="$ctrl.item.description" class="form-control"/>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+    <button type="button" ng-click="$ctrl.submit()" ng-hide="$ctrl.item.id" class="btn btn-primary">Thêm Mới</button>
+    <button type="button" ng-click="$ctrl.submit()" ng-show="$ctrl.item.id" class="btn btn-primary">Cập Nhật</button>
+</div>

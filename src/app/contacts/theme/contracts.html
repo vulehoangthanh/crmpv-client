@@ -1,0 +1,13 @@
+<div class="form-group">
+    <a style="cursor: pointer" class="btn btn-primary" title="Thêm Hợp Đồng" ng-click="$ctrl.onAction({action: 'add'})"><i class="fa fa-plus"></i></a>
+</div>
+<partial-list on-action="$ctrl.onAction($event)" items="$ctrl.contracts" fields="$ctrl.table.fields" actions="$ctrl.table.actions"></partial-list>
+<div class="modal fade" id="contracts-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <item-form ng-if="$ctrl.modal == 'add'" item="$ctrl.opportunity" on-cancel="$ctrl.cancel" on-submit="$ctrl.create($event)" template="app/contacts/theme/contract-form.html"/>
+            <item-form ng-if="$ctrl.modal == 'edit'" item="$ctrl.opportunity" on-cancel="$ctrl.cancel" on-submit="$ctrl.update($event)" template="app/contacts/theme/contract-form.html"/>
+            <item-form ng-if="$ctrl.modal == 'view'" item="$ctrl.opportunity" template="app/contacts/theme/opportunity-view.html"/>
+        </div>
+    </div>
+</div>

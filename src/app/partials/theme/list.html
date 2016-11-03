@@ -1,0 +1,28 @@
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th></th>
+            <th ng-repeat="field in ::$ctrl.fields" ng-bind="field.label"></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in $ctrl.items track by $index" id="row-{{ item.id }}">
+            <td></td>
+            <td ng-repeat="field in ::$ctrl.fields" ng-bind="item|parserField:field"></td>
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                        <i class="fa fa-gear"></i>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="presentation" ng-repeat="action in ::$ctrl.actions">
+                            <a style="cursor: pointer" ng-click="$ctrl.click(action.name, item.id)" ng-bind="action.label"></a>
+                        </li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

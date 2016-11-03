@@ -1,0 +1,22 @@
+<div class="box box-widget">
+    <div class="box-header with-border">
+        <h1 class="box-title">Danh Sách Khách Hàng ({{ $ctrl.total }})</h1>
+        <a style="cursor: pointer" class="btn btn-sm btn-success btn-flat pull-right" ng-click="$ctrl.onAction({action: 'add'})">Thêm Khách Hàng</a>
+    </div>
+    <div class="box-body">
+        <partial-list on-action="$ctrl.onAction($event)" items="$ctrl.contacts" fields="$ctrl.table.fields" actions="$ctrl.table.actions"></partial-list>
+    </div>
+    <div class="box-footer">
+        <div ng-bind-html="$ctrl.links" vl-pagination on-click="$ctrl.paginate"></div>
+    </div>
+</div>
+
+<div class="modal fade" id="contacts-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <contact-form ng-if="$ctrl.modal == 'add'" contact="$ctrl.contact" on-submit="$ctrl.createContact($event)" on-cancel="$ctrl.closeModal()"></contact-form>
+            <contact-form ng-if="$ctrl.modal == 'edit'" contact="$ctrl.contact" on-submit="$ctrl.updateContact($event)" on-cancel="$ctrl.closeModal()"></contact-form>
+            <contact-view ng-if="$ctrl.modal == 'detail'" />
+        </div>
+    </div>
+</div>

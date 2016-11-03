@@ -1,0 +1,48 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 ng-hide="::$ctrl.item.id" class="modal-title">Thêm Mới Nhân Viên</h4>
+    <h4 ng-show="::$ctrl.item.id" class="modal-title">Chỉnh sửa Nhân Viên <strong ng-bind="::$ctrl.item.name"></strong></h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Thông Tin Cá Nhân</h3>
+                </div>
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="">Tên Đầy Đủ</label>
+                        <input type="text" ng-model="$ctrl.item.name" class="form-control"/>
+                        <label for="">Điện Thoại</label>
+                        <input type="text" ng-model="$ctrl.item.phone_work" class="form-control"/>
+                        <label for="">Địa Chỉ</label>
+                        <textarea ng-model="$ctrl.item.primary_address" class="form-control"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Thông Tin Đăng Nhập</h3>
+                </div>
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="">Email Đăng Nhập</label>
+                        <input type="text" ng-model="$ctrl.item.email" class="form-control"/>
+                        <label for="">Mật Khẩu Mới</label>
+                        <input type="password" ng-model="$ctrl.item.password" class="form-control"/>
+                        <label for="">Xác Nhận Mật Khẩu</label>
+                        <input type="password" ng-model="$ctrl.item.password_confirmation" class="form-control"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+    <button type="button" ng-click="$ctrl.submit()" ng-hide="::$ctrl.item.id" class="btn btn-primary">Thêm Mới</button>
+    <button type="button" ng-click="$ctrl.submit()" ng-show="::$ctrl.item.id" class="btn btn-primary">Cập Nhật</button>
+</div>

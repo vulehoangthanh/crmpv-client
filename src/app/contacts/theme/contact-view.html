@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-3">
+        <contact-info contact="::$ctrl.contact"/>
+    </div>
+    <div class="col-md-9">
+        <div class="box box-widget">
+            <div class="box-body">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a style="cursor: pointer;" onclick="$('#contact-view-form-tab_1').tab('show');$('div.tab-pane').removeClass('active');$('#contact-view-form-tab_1').addClass('active');" data-toggle="tab">Cơ hội</a></li>
+                        <li><a style="cursor: pointer;" onclick="$('#contact-view-form-tab_2').tab('show');$('div.tab-pane').removeClass('active');$('#contact-view-form-tab_2').addClass('active');" data-toggle="tab">Hợp Đồng</a></li>
+                        <li><a style="cursor: pointer;" onclick="$('#contact-view-form-tab_3').tab('show');$('div.tab-pane').removeClass('active');$('#contact-view-form-tab_3').addClass('active');" data-toggle="tab">Hóa Đơn</a></li>
+                        <li><a style="cursor: pointer;" onclick="$('#contact-view-form-tab_4').tab('show');$('div.tab-pane').removeClass('active');$('#contact-view-form-tab_4').addClass('active');" data-toggle="tab">Gửi SMS</a></li>
+                        <li><a style="cursor: pointer;" onclick="$('#contact-view-form-tab_5').tab('show');$('div.tab-pane').removeClass('active');$('#contact-view-form-tab_5').addClass('active');" data-toggle="tab">Gửi Mail</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="contact-view-form-tab_1">
+                            <opportunities contact="$ctrl.contact"/>
+                        </div>
+                        <div class="tab-pane" id="contact-view-form-tab_2">
+                            <contracts contact="$ctrl.contact"/>
+                        </div>
+                        <div class="tab-pane" id="contact-view-form-tab_3">
+                            <p class="text text-info">Tính Năng Đang Cập Nhật</p>
+                        </div>
+                        <div class="tab-pane" id="contact-view-form-tab_4">
+                            <p class="text text-info">Tính Năng Đang Cập Nhật</p>
+                        </div>
+                        <div class="tab-pane" id="contact-view-form-tab_5">
+                            <p class="text text-info">Tính Năng Đang Cập Nhật</p>
+                            <vl-editor-simple ng-model="$ctrl.editor"/>
+                            <div class="form-group">
+                                <button class="btn btn-primary">Gửi</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

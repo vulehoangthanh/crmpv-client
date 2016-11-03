@@ -1,6 +1,11 @@
 (function(angular) {
     'use strict';
-    angular.module("myCRM", ['login', 'common', 'ngStorage', 'configModule'])
+    angular.module("myCRM", ['login', 'common', 'contacts', 'usersModule', 'settingsModule', 'ngStorage', 'configModule'])
+        .run(function ($rootScope, helperFunc) {
+            $rootScope.$on('message:success', function(e, message) {
+                helperFunc.notifySuccess(message);
+            });
+        })
         .config(function($httpProvider) {
             $httpProvider.interceptors.push(['$q', '$state', '$localStorage', function ($q, $state, $localStorage) {
                 return {
@@ -12,9 +17,18 @@
                         return config;
                     },
                     'responseError': function (response) {
-                        if (response.status === 401 || response.status === 403) {
-                            $state.go('/login');
+                        if (response.status === 401) {
+                            $state.go('login');
                         }
+
+                        if(response.status === 403) {
+
+                        }
+
+                        if(response.status === 400) {
+
+                        }
+
                         return $q.reject(response);
                     }
                 };

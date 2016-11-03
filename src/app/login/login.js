@@ -1,19 +1,6 @@
 (function(angular) {
     'use strict';
-    function services($http, config) {
-        function authentication(email, password) {
-            return $http.post(config.api + 'user/login', {
-                email: email,
-                password: password
-            })
-        }
-
-        return {
-            authentication: authentication
-        }
-    }
-
-    function controller($state, $localStorage, Auth) {
+    function controller($element, $state, $localStorage, Auth) {
         var scope = this;
         scope.$onInit = function() {
             angular.element('body').addClass('hold-transition login-page');
@@ -24,13 +11,21 @@
         };
 
         scope.login = function() {
+            $element.find('#login-error')
+                .addClass('hide');
             Auth.authentication(scope.user.email, scope.user.password)
                 .then(function(rs) {
                     //store Token
                     var token = rs.data.token;
                     $localStorage.token = token;
                     $localStorage.user = {};
-                    $state.go('app');
+                    $state.go('app.dashboard');
+                }, function(rs) {
+                    if(rs.status == 401) {
+                        $element.find('#login-error')
+                            .removeClass('hide')
+                            .text('Đăng Nhập Thất Bại');
+                    }
                 });
         }
     }
@@ -49,11 +44,11 @@
                 controller: function($localStorage, $state) {
                     delete $localStorage.token;
                     delete $localStorage.user;
+                    delete $localStorage.setting;
                     $state.go('login');
                 }
             });
         })
-        .factory('Auth', services)
         .component('loginComponent', {
             bindings: {},
             templateUrl: 'app/login/login.html',

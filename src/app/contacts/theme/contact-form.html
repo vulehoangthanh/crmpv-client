@@ -1,0 +1,52 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 ng-hide="$ctrl.contact.id" class="modal-title">Thêm Mới KH</h4>
+    <h4 ng-show="$ctrl.contact.id" class="modal-title">Chỉnh sửa KH <strong ng-bind="$ctrl.contact.name"></strong></h4>
+</div>
+<div class="modal-body">
+    <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+            <li class="active"><a style="cursor: pointer;" onclick="$('#contact-form-tab_1').tab('show');$('#contact-form-tab_2').removeClass('active');$('#contact-form-tab_1').addClass('active');" data-toggle="tab">Thông Tin Cơ Bản</a></li>
+            <li><a style="cursor: pointer;" onclick="$('#contact-form-tab_2').tab('show');$('#contact-form-tab_1').removeClass('active');$('#contact-form-tab_2').addClass('active');" data-toggle="tab">Thông Tin Chi Tiết</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="contact-form-tab_1">
+                <div class="form-group">
+                    <label for="">Nhân viên phụ trách</label>
+                    <vl-users ng-model="$ctrl.contact.assigned_user_id" title="Nhân viên phụ trách"/>
+                </div>
+                <div class="form-group">
+                    <label for="">Tên Công Ty</label>
+                    <input type="text" class="form-control" ng-model="$ctrl.contact.company_name"/>
+                    <label>Danh Xưng</label>
+                    <vl-titles title="chọn danh xưng" ng-model="$ctrl.contact.title"/>
+                    <label>Người Đại Diện</label>
+                    <input type="text" class="form-control" ng-model="$ctrl.contact.name" />
+                    <label>Email</label>
+                    <input type="text" class="form-control" ng-model="$ctrl.contact.email"/>
+                    <label>Điện thoại</label>
+                    <input type="text" class="form-control" ng-model="$ctrl.contact.phone_home"/>
+                    <label>Di Động</label>
+                    <input type="text" class="form-control" ng-model="$ctrl.contact.phone_mobile"/>
+                </div>
+            </div>
+            <div class="tab-pane" id="contact-form-tab_2">
+                <label for="">Tên Công Ty Đầy Đủ</label>
+                <input type="text" class="form-control" ng-model="$ctrl.contact.company_fullname"/>
+                <label for="">Địa Chỉ Công Ty</label>
+                <textarea class="form-control" ng-model="$ctrl.contact.company_address"></textarea>
+                <label for="">Ngân Hàng</label>
+                <input type="text" class="form-control" ng-model="$ctrl.contact.bank_name"/>
+                <label for="">Chi Nhánh</label>
+                <input type="text" class="form-control" ng-model="$ctrl.contact.bank_branch"/>
+                <label for="">Số Tài Khoản</label>
+                <input type="text" class="form-control" ng-model="$ctrl.contact.bank_account"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+    <button type="button" ng-click="$ctrl.submit()" ng-hide="$ctrl.contact.id" class="btn btn-primary">Thêm Mới</button>
+    <button type="button" ng-click="$ctrl.submit()" ng-show="$ctrl.contact.id" class="btn btn-primary">Cập Nhật</button>
+</div>

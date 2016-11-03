@@ -20,6 +20,8 @@
     "chosen": "1.6.*",
     "angular-ui-tinymce": "^0.0.16",
     "angular-ui-router": "1.0.0-beta.2",
-    "ngstorage": "^0.3.11"
+    "ngstorage": "^0.3.11",
+    "moment": "2.11.2",
+    "remarkable-bootstrap-notify": "^3.1.3"
   }
 }

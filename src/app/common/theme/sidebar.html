@@ -1,0 +1,56 @@
+<aside class="main-sidebar">
+    <section class="sidebar">
+        <user-info></user-info>
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+            <li class="header">MAIN NAVIGATION</li>
+            <li>
+                <a style="cursor: pointer;" ui-sref="app.dashboard">
+                    <i class="fa fa-dashboard"></i> <span>Trang chủ</span>
+                </a>
+            </li>
+            <li>
+                <a style="cursor: pointer;">
+                    <i class="fa fa-users"></i> <span>Khách Hàng</span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a style="cursor: pointer;" ui-sref="app.contacts"><i class="fa fa-circle-o"></i> DS KH</a></li>
+                    <!--<li><a href="javascript:void()"><i class="fa fa-circle-o"></i> Thêm KH</a></li>-->
+                    <!--<li><a href="javascript:void()"><i class="fa fa-circle-o"></i> Cơ Hội</a></li>-->
+                    <li><a style="cursor: pointer;"><i class="fa fa-circle-o"></i> Import KH</a></li>
+                </ul>
+            </li>
+            <li>
+                <a style="cursor: pointer;">
+                    <i class="fa fa-user"></i> <span>Nhân Viên</span>
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a style="cursor: pointer;" ui-sref="app.users"><i class="fa fa-circle-o"></i> DS Nhân Viên</a></li>
+                    <li><a style="cursor: pointer;"><i class="fa fa-circle-o"></i> Import NV</a></li>
+                </ul>
+            </li>
+            <li>
+                <a style="cursor: pointer;">
+                    <i class="fa fa-gear "></i> <span>Cài đặt</span>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a style="cursor: pointer;"><i class="fa fa-circle-o"></i> Cài đặt chung</a>
+                    </li>
+                    <li>
+                        <a style="cursor: pointer;" ui-sref="app.setting({group: 'company-info'})"><i class="fa fa-circle-o"></i> Thông tin công ty</a>
+                    </li>
+                    <li>
+                        <a style="cursor: pointer;"><i class="fa fa-circle-o"></i> Cài đặt E-Mail</a>
+                    </li>
+                    <li>
+                        <a style="cursor: pointer;"><i class="fa fa-circle-o"></i> Cài đặt SMS</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</aside>
